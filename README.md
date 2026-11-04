@@ -1,6 +1,8 @@
 # ProxmoxVE Shell Auto Login
 
-A simple bash script to add the current user to the shell auto login like the root user does. This allows the user to be automatically logged in to the shell without entering credentials.
+A simple set of instructions on how to add the current user into the host's shell auto login feature to emitate `root` auto login behaviour.
+<!--A simple bash script to add the current user to the shell auto login like the root user does.-->
+This allows the user to be automatically logged in directly into the host's shell without entering credentials.
 
 ### Before
 ![Before enabling auto login](https://raw.githubusercontent.com/noahbleau/ProxmoxVE-Shell-Auto-Login/refs/heads/main/img/before.png)
@@ -11,32 +13,29 @@ A simple bash script to add the current user to the shell auto login like the ro
 The file for the login function on the host shell is `/usr/share/perl5/PVE/API2/Nodes.pm`. *The source for this file is available here : [proxmox/pve-manager/PVE/API2/Nodes.pm](https://github.com/proxmox/pve-manager/blob/master/PVE/API2/Nodes.pm).*
 
 > [!Important]
-> **The script needs to be run after every `apt upgrade` of `pve-manager` since the file will be overwritten.** You'll notice the login prompt coming back after an update, just log back in and run these steps again.
+> **This utility could needs to be run after every `apt upgrade` of the `pve-manager` since the file can be overwritten.** If needed to, you'll notice the login prompt coming back, just log back in and run these steps again.
 
 > [!Warning]
 > **Modifying system files can potentially break your Proxmox installation.** Proceed with caution and make sure to have a backup before proceeding.
 
 ## Instructions
 
-Two options are available : via script or manually. Choose what you prefer.
+The manual instructions are listed bellow. An automated bash script is in development, see this the [Issue #1](https://github.com/noahbleau/ProxmoxVE-Shell-Auto-Login/issues/1) for details.
+<!--Two options are available : via script or manually. Choose what you prefer.-->
 
+<!--
 ### Running the script
 
 Running the script is easier and faster.
 
-> [!Note]
-> The script is not yet ready to be used.
-> *If you want to proceed anyway, change to the `script` branch in the repository.*
-
-<!--
-1. Download the script : `wget file.sh`
-2. Make it executable : `chmod +x file.sh`
-3. Run the script : `./file.sh`
+1. Download the script : `wget https://raw.githubusercontent.com/noahbleau/PVE-Shell-Auto-Login/refs/heads/main/pve-auto-login.sh`
+2. Make it executable : `chmod +x pve-auto-login.sh`
+3. Run the script : `./pve-auto-login.sh`
 -->
 
 ### Manually editing the file
 
-If you prefer editing the file manually, do the following.
+<!--If you prefer editing the file manually, do the following.-->
 
 1. Open the file `/usr/share/perl5/PVE/API2/Nodes.pm` in nano or your preferred editor.
 
