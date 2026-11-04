@@ -1,6 +1,6 @@
 # ProxmoxVE Shell Auto Login
 
-A simple set of instructions on how to add the current user into the host's shell auto login feature to emitate `root` auto login behaviour.
+A simple set of instructions on how to add the current user into the host's shell auto login feature to imitate `root` auto login behaviour.
 <!--A simple bash script to add the current user to the shell auto login like the root user does.-->
 This allows the user to be automatically logged in directly into the host's shell without entering credentials.
 
@@ -9,15 +9,15 @@ The host's shell is prompting the user for his Linux PAM credentials on each ses
 
 ![Before enabling auto login](https://raw.githubusercontent.com/noahbleau/ProxmoxVE-Shell-Auto-Login/refs/heads/main/img/before.png)
 
-### With auto login
-The host's shell will directly login the user into his Linux PAM account without prompting. Emitate the behaviour of the `root` account.
+### With auto log
+The host's shell will directly login the user into his Linux PAM account without prompting. Imitating the behaviour of the `root` account.
 
 ![After enabling auto login](https://raw.githubusercontent.com/noahbleau/ProxmoxVE-Shell-Auto-Login/refs/heads/main/img/after.png)
 
 The file for the login handling inside the Proxmox host is located at `/usr/share/perl5/PVE/API2/Nodes.pm`. *The source code of this file can be found here : [proxmox/pve-manager/PVE/API2/Nodes.pm](https://github.com/proxmox/pve-manager/blob/master/PVE/API2/Nodes.pm).*
 
 > [!Important]
-> **This utility could needs to be run after every `apt upgrade` of the `pve-manager` since the file can be overwritten.** If needed to, you'll notice the login prompt coming back, just log back in and run these steps again.
+> **This utility could needs to be run after every `apt upgrade` of the `pve-manager` since the file can be overwritten.** If needed to, the login prompt will come back, just log back in and run these steps again.
 
 > [!Warning]
 > **Modifying system files can potentially break your Proxmox installation.** Proceed with caution and make sure to have a backup before proceeding.
