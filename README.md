@@ -4,13 +4,15 @@ A simple set of instructions on how to add the current user into the host's shel
 <!--A simple bash script to add the current user to the shell auto login like the root user does.-->
 This allows the user to be automatically logged in directly into the host's shell without entering credentials.
 
-### Before
+### Without auto login
+The host's shell is prompting the user for his Linux PAM credentials on each sessions.
 ![Before enabling auto login](https://raw.githubusercontent.com/noahbleau/ProxmoxVE-Shell-Auto-Login/refs/heads/main/img/before.png)
 
-### After
+### With auto login
+The host's shell will directly login the user into his Linux PAM account without prompting. Emitate the behaviour of the `root` account.
 ![After enabling auto login](https://raw.githubusercontent.com/noahbleau/ProxmoxVE-Shell-Auto-Login/refs/heads/main/img/after.png)
 
-The file for the login function on the host shell is `/usr/share/perl5/PVE/API2/Nodes.pm`. *The source for this file is available here : [proxmox/pve-manager/PVE/API2/Nodes.pm](https://github.com/proxmox/pve-manager/blob/master/PVE/API2/Nodes.pm).*
+The file for the login handling inside the Proxmox host is located at `/usr/share/perl5/PVE/API2/Nodes.pm`. *The source code of this file can be found here : [proxmox/pve-manager/PVE/API2/Nodes.pm](https://github.com/proxmox/pve-manager/blob/master/PVE/API2/Nodes.pm).*
 
 > [!Important]
 > **This utility could needs to be run after every `apt upgrade` of the `pve-manager` since the file can be overwritten.** If needed to, you'll notice the login prompt coming back, just log back in and run these steps again.
