@@ -38,3 +38,19 @@ fi
 # This ensures that the script knows which user is currently active, even if running with elevated privileges.
 USER=${SUDO_USER:-$(whoami)}
 
+# Prevent running the script with root since ProxmoxVE Shell Auto Login is already active
+# for root by default on ProxmoxVE installations
+if [[ $USER == "root" ]]; then
+	echo -e "${COLORS[RED]}[ERROR] This script should not be run as root${COLORS[RESET]}"
+	echo -e "${COLORS[BLUE]}[INFO] ProxmoxVE Shell Auto Login is already active for root by default on ProxmoxVE installations${COLORS[RESET]}"
+	echo -e "${COLORS[RED]}Exiting script due to errors...${COLORS[RESET]}"
+	exit 1
+fi
+
+# Verify that the script is being run with sudo
+# Check if the effective user ID is not root (0)
+if [[ $EUID -ne 0 ]]; then
+	echo -e "${COLORS[RED]}[ERROR] This script must be run with sudo${COLORS[RESET]}"
+	echo -e "${COLORS[RED]}Exiting script due to errors...${COLORS[RESET]}"
+	exit 1
+fi
