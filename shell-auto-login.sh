@@ -42,7 +42,7 @@ USER=${SUDO_USER:-$(whoami)}
 # for root by default on ProxmoxVE installations
 if [[ $USER == "root" ]]; then
 	echo -e "${COLORS[RED]}[ERROR] This script should not be run as root${COLORS[RESET]}"
-	echo -e "${COLORS[BLUE]}[INFO] ProxmoxVE Shell Auto Login is already active for root by default on ProxmoxVE installations${COLORS[RESET]}"
+	echo -e "${COLORS[RED]}        ProxmoxVE Shell Auto Login is already active for root by default on ProxmoxVE installations${COLORS[RESET]}"
 	echo -e "${COLORS[RED]}Exiting script due to errors...${COLORS[RESET]}"
 	exit 1
 fi
