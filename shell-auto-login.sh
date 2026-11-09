@@ -20,6 +20,12 @@ COLORS=(
 	[CYAN]='\033[0;36m'
 )
 
+# Display warnings and information about the script's development status and reporting issues
+echo -e "${COLORS[YELLOW]}[WARN] This script is still under development, do not use this script in production${COLORS[RESET]}"
+echo -e "${COLORS[YELLOW]}[WARN] If you are part of the entreprise licensing, do not use this script as it could violate your licensing agreement${COLORS[RESET]}"
+echo -e "${COLORS[BLUE]}[INFO] If any bugs or issues are encountered, please report them on the GitHub repository as a new issue:${COLORS[RESET]}"
+echo -e "${COLORS[BLUE]}       ${GIT_URL}/issues/new${COLORS[RESET]}\n"
+
 # Store the current logged in user
 # This will store the username of the user who invoked sudo, or the current user if not using sudo.
 # This ensures that the script knows which user is currently active, even if running with elevated privileges.
