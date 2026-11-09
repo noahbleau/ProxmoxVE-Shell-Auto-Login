@@ -26,6 +26,13 @@ echo -e "${COLORS[YELLOW]}[WARN] If you are part of the entreprise licensing, do
 echo -e "${COLORS[BLUE]}[INFO] If any bugs or issues are encountered, please report them on the GitHub repository as a new issue:${COLORS[RESET]}"
 echo -e "${COLORS[BLUE]}       ${GIT_URL}/issues/new${COLORS[RESET]}\n"
 
+# Verify that the system is Proxmox Virtual Environment (Proxmox VE)
+if ! (uname -r 2>/dev/null | grep -q "pve"); then
+	echo -e "${COLORS[RED]}[ERROR] This system does not appear to be ProxmoxVE, this script is only for ProxmoxVE systems${COLORS[RESET]}"
+	echo -e "${COLORS[RED]}Exiting script due to errors...${COLORS[RESET]}"
+	exit 1
+fi
+
 # Store the current logged in user
 # This will store the username of the user who invoked sudo, or the current user if not using sudo.
 # This ensures that the script knows which user is currently active, even if running with elevated privileges.
