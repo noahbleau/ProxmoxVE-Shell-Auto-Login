@@ -14,7 +14,7 @@ The host's shell will directly login the user into his Linux PAM account without
 
 ![After enabling auto login](https://raw.githubusercontent.com/noahbleau/ProxmoxVE-Shell-Auto-Login/refs/heads/main/img/after.png)
 
-The file for the login handling inside the Proxmox host is located at `/usr/share/perl5/PVE/API2/Nodes.pm`. *The source code of this file can be found here : [proxmox/pve-manager/PVE/API2/Nodes.pm](https://github.com/proxmox/pve-manager/blob/master/PVE/API2/Nodes.pm).*
+The file for the login handling inside the Proxmox host is located at `/usr/share/perl5/PVE/API2/Nodes.pm`. *The source code of this file can be found at [proxmox/pve-manager/PVE/API2/Nodes.pm](https://github.com/proxmox/pve-manager/blob/master/PVE/API2/Nodes.pm).*
 
 > [!Important]
 > **This utility could needs to be run after every `apt upgrade` of the `pve-manager` since the file can be overwritten.** If needed to, the login prompt will come back, just log back in and run these steps again.
