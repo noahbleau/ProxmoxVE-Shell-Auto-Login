@@ -20,6 +20,9 @@ COLORS=(
 	[CYAN]='\033[0;36m'
 )
 
+# Display information about this script
+echo -e "${COLORS[GREEN]}ProxmoxVE Shell Auto Login by @noahbleau\n${GIT_URL}${COLORS[RESET]}\n"
+
 # Display warnings and information about the script's development status and reporting issues
 echo -e "${COLORS[YELLOW]}[WARN] This script is still under development, do not use this script in production${COLORS[RESET]}"
 echo -e "${COLORS[YELLOW]}[WARN] If you are part of the entreprise licensing, do not use this script as it could violate your licensing agreement${COLORS[RESET]}"
