@@ -7,12 +7,12 @@ This allows the user to be automatically logged in directly into the host's shel
 ### Without auto login
 The host's shell is prompting the user for his Linux PAM credentials on each sessions.
 
-![Before enabling auto login](https://raw.githubusercontent.com/noahbleau/ProxmoxVE-Shell-Auto-Login/refs/heads/main/img/before.png)
+![Before enabling auto login](https://raw.githubusercontent.com/exnc/ProxmoxVE-Shell-Auto-Login/refs/heads/main/img/before.png)
 
 ### With auto log
 The host's shell will directly login the user into his Linux PAM account without prompting. Imitating the behaviour of the `root` account.
 
-![After enabling auto login](https://raw.githubusercontent.com/noahbleau/ProxmoxVE-Shell-Auto-Login/refs/heads/main/img/after.png)
+![After enabling auto login](https://raw.githubusercontent.com/exnc/ProxmoxVE-Shell-Auto-Login/refs/heads/main/img/after.png)
 
 The file for the login handling inside the Proxmox host is located at `/usr/share/perl5/PVE/API2/Nodes.pm`. *The source code of this file can be found at [proxmox/pve-manager/PVE/API2/Nodes.pm](https://github.com/proxmox/pve-manager/blob/master/PVE/API2/Nodes.pm).*
 
@@ -24,7 +24,7 @@ The file for the login handling inside the Proxmox host is located at `/usr/shar
 
 ## Instructions
 
-The manual instructions are listed bellow. An automated bash script is in development, see the [Issue #1](https://github.com/noahbleau/ProxmoxVE-Shell-Auto-Login/issues/1) for details.
+The manual instructions are listed bellow. An automated bash script is in development, see the [Issue #1](https://github.com/exnc/ProxmoxVE-Shell-Auto-Login/issues/1) for details.
 <!--Two options are available : via script or manually. Choose what you prefer.-->
 
 <!--
@@ -32,7 +32,7 @@ The manual instructions are listed bellow. An automated bash script is in develo
 
 Running the script is easier and faster.
 
-1. Download the script : `wget https://raw.githubusercontent.com/noahbleau/PVE-Shell-Auto-Login/refs/heads/main/pve-auto-login.sh`
+1. Download the script : `wget https://raw.githubusercontent.com/exnc/PVE-Shell-Auto-Login/refs/heads/main/pve-auto-login.sh`
 2. Make it executable : `chmod +x pve-auto-login.sh`
 3. Run the script : `./pve-auto-login.sh`
 -->
